@@ -1,0 +1,14 @@
+@import "./fonts";
+@import "./vars";
+@import "./mixins";
+@import "./cleancing";
+
+// Common style
+
+
+// Blocks
+@import "./header.scss";
+@import "./footer.scss";
+
+// Pages
+@import "./home.scss";

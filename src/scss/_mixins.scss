@@ -1,0 +1,56 @@
+// Unit mixin
+@mixin getMedia($maxWidth: 1900, $minWidth: null) {
+  @if ($maxWidth and $minWidth == null) {
+    @media (max-width: #{$maxWidth}px) {
+      @content;
+    }
+  }
+  @if ($maxWidth and $minWidth) {
+    @media (min-width: #{$minWidth}px) and (max-width: #{$maxWidth - 1}px) {
+      @content;
+    }
+  }
+  @if ($maxWidth == null and $minWidth) {
+    @media (min-width: #{$minWidth}px) {
+      @content;
+    }
+  }
+}
+// Media mixin
+@mixin media($device: desktop) {
+  @if ($device == widescreen) {
+    @include getMedia(null, 1900) {
+      @content;
+    }
+  }
+  @if ($device == desktop-lg) {
+    @include getMedia(1368) {
+      @content;
+    }
+  }
+  @if ($device == desktop) {
+    @include getMedia(1280) {
+      @content;
+    }
+  }
+  @if ($device == tablet-lg) {
+    @include getMedia(1024) {
+      @content;
+    }
+  }
+  @if ($device == tablet) {
+    @include getMedia(768) {
+      @content;
+    }
+  }
+  @if ($device == phone-lg) {
+    @include getMedia(600) {
+      @content;
+    }
+  }
+  @if ($device == phone) {
+    @include getMedia(320px) {
+      @content;
+    }
+  }
+}
