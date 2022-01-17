@@ -89,10 +89,10 @@
       padding: 10px 20px 20px 20px;
     }
     &Name{
-      font-size: 14px;
+      font-size: $font-size__footer;
     }
     &Text{
-      font-size: 14px;
+      font-size: $font-size__footer;
       opacity: 0.7;
     }
   }

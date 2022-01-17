@@ -1,0 +1,33 @@
+.navBar {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  box-sizing: border-box;
+  width: auto;
+  transition: all 0.2s;
+  color: rgba(0,0,0,0.3);
+  z-index: 1000;
+  &:hover{
+    color: rgba(0,0,0,1);
+  }
+  &Sec{
+    width: auto;
+    box-sizing: border-box;
+    white-space: nowrap;
+    padding: 10px 10px 10px 20px;
+    margin: 5px 0;
+    border-radius: 0 30px 30px 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(0,0,0,0.3);
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.1);
+      border: 1px solid rgba(0,0,0,1);
+    }
+    &Active{
+      color: rgba(0,0,0,1);
+      border: 1px solid rgba(0,0,0,1);
+    }
+  }
+}

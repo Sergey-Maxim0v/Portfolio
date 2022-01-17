@@ -2,14 +2,15 @@
 @import "./vars";
 @import "./mixins";
 @import "./cleancing";
+@import "./section1";
+@import "./section2";
+@import "./section3";
+@import "./section4";
 @import "./section5";
-
-// Common style
-
 
 // Blocks
 @import "./header.scss";
-@import "./footer.scss";
+@import "./navbar";
 
 // Pages
 @import "./home.scss";
