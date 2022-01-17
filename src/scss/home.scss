@@ -1,13 +1,15 @@
-body{
+body {
   font-family: 'Open Sans';
   font-weight: 400;
   font-size: $font-size__content;
   height: 100vh;
 }
+
 .mainLayout {
   position: relative;
   overflow: hidden;
 }
+
 .styleButton {
   position: fixed;
   right: 40px;
@@ -26,17 +28,19 @@ body{
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
+
   &:hover {
     opacity: 1;
   }
 }
 
-.sections{
+.sections {
   position: relative;
   width: 100vw;
   height: 100vh;
   transition: transform 0.8s;
 }
+
 .section {
   width: 100%;
   height: 100%;

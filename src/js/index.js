@@ -1,7 +1,6 @@
 const nodeSections = document.querySelector('.sections');
 const nodeMainLayout = document.querySelector('.mainLayout');
 const arrNodeNavBarButtons = document.querySelectorAll('.navBarSec');
-
 const height = nodeSections.clientHeight;
 
 let activePictureIndex = 0;
@@ -25,7 +24,7 @@ function scrollMouseWheel() {
     } else if (event.deltaY > 0) {
       setActivePage('down');
     }
-    if(activePictureIndex != 0 && activePictureIndex != 4) {
+    if(activePictureIndex !== 0 && activePictureIndex !== 3) {
       transitionEnd = false;
     }
   });
@@ -97,7 +96,7 @@ function setActivePage(value) {
       activePictureIndex * height
     }px)`;
   } else if (value === 'down') {
-    if (activePictureIndex + 1 <= 4) {
+    if (activePictureIndex + 1 <= 3) {
       activePictureIndex += 1;
     }
     removeStyleNavButtons('navBarSecActive');
