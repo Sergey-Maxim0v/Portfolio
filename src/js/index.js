@@ -1,7 +1,6 @@
 import scrollingWorks from "./scrollingWorks";
 
 const nodeSections = document.querySelector('.sections');
-const nodeMainLayout = document.querySelector('.mainLayout');
 const arrNodeNavBarButtons = document.querySelectorAll('.navBarSec');
 const height = nodeSections.clientHeight;
 
@@ -40,24 +39,15 @@ nodeSections.addEventListener('transitionend', () => {
 // push Key Arrows
 
 function pushKeyArrows() {
-	document.addEventListener('keyup', keySetActivePage);
-	document.addEventListener('keydown', (event) => {
-		// todo
-		// if (event.key === 'ArrowUp') {
-		//   console.log();
-		// } else if (event.key === 'ArrowDown') {
-		//   console.log();
-		// }
+	document.addEventListener('keyup', (event) => {
+		if (event.key === 'ArrowUp') {
+			setActivePage('up');
+		} else if (event.key === 'ArrowDown') {
+			setActivePage('down');
+		}
 	});
 }
 
-function keySetActivePage(event) {
-	if (event.key === 'ArrowUp') {
-		setActivePage('up');
-	} else if (event.key === 'ArrowDown') {
-		setActivePage('down');
-	}
-}
 
 // clickNavBar
 
