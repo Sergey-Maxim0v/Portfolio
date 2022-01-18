@@ -9,11 +9,6 @@
     font-size: $font-size__title-3;
   }
 
-  &ContentRow {
-    border: red 1px solid;
-    padding: 20px;
-  }
-
   &List {
     padding: 20px 20px 20px 60px;
 
@@ -30,7 +25,6 @@
         display: block;
         width: 6px;
         height: 6px;
-        border: 2px rgba(0, 0, 0, 0.8) solid;
         border-radius: 5px;
         background-color: rgba(0, 0, 0, 0.8);
       }

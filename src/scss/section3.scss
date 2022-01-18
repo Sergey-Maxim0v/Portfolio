@@ -63,7 +63,7 @@
     height: auto;
     display: flex;
     flex-wrap: nowrap;
-    transition: all 0.4s;
+    transition: all 0.4s ease-out;
   }
 
   &Project {
@@ -73,6 +73,5 @@
     width: 300px;
     min-width: 300px;
     height: 360px;
-    border: green 1px solid;
   }
 }
