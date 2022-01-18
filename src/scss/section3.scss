@@ -10,38 +10,52 @@
     margin: 0 0 30px 0;
   }
 
-  &Content{
+  &Content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 75vw;
+    width: 95%;
   }
-  &BtnLeft{
+
+  &Btn {
     width: 60px;
     height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    border: greenyellow 1px solid;
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transition: all 0.1s;
+      transform: scale(1.05);
+    }
   }
-  &BtnRight{
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: greenyellow 1px solid;
+
+  &BtnLeft {
+    background-image: url("../../assets/images/arrow-left.svg");
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &BtnRight {
+    background-image: url("../../assets/images/arrow-right.svg");
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s;
   }
 
   &ProjectsRow {
     width: 100%;
     max-width: 1400px;
     overflow: hidden;
-    border: blue 1px solid;
     position: relative;
     display: flex;
+    box-shadow: $shadow-link-black5;
   }
 
   &Projects {
@@ -49,7 +63,7 @@
     height: auto;
     display: flex;
     flex-wrap: nowrap;
-    //transform: translateX(-000px); todo
+    transition: all 0.4s;
   }
 
   &Project {
