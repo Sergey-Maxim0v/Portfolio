@@ -1,3 +1,47 @@
 .section1 {
-  background-color: rgba(0,255,0,0.3);
+  padding: 100px 150px 100px;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &Title {
+    font-size: $font-size__title-1;
+    margin: 0 0 40px 0;
+    text-align: center;
+  }
+
+  &Name {
+    font-size: $font-size__title-3;
+    margin: 0 0 40px 0;
+    text-align: center;
+  }
+
+  &Text1 {
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+  &Text2 {
+    text-align: center;
+    margin: 0 0 40px 0;
+  }
+
+  &BtnDownload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 36px;
+    border-radius: 30px;
+    color: black;
+    box-shadow: $shadow-link-black5;
+    transition: all 0.3s;
+    &:hover{
+      box-shadow: $shadow-link-black10;
+    }
+    &:active{
+      transition: box-shadow 0.1s;
+      box-shadow: $shadow-link-black3;
+    }
+  }
 }

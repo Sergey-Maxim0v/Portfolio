@@ -19,15 +19,16 @@
     margin: 5px 0;
     border-radius: 0 30px 30px 0;
     transition: all 0.3s;
-    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: $shadow-link-grey;
     cursor: pointer;
     &:hover{
       transform: scale(1.1);
-      border: 1px solid rgba(0,0,0,1);
+      border: 1px solid rgba(0,0,0,0.3);
+      box-shadow: $shadow-link-black5;
     }
     &Active{
       color: rgba(0,0,0,1);
-      border: 1px solid rgba(0,0,0,1);
+      box-shadow: $shadow-link-black5;
     }
   }
 }
