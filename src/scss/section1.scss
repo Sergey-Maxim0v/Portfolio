@@ -21,6 +21,7 @@
     text-align: center;
     margin: 0 0 10px 0;
   }
+
   &Text2 {
     text-align: center;
     margin: 0 0 40px 0;
@@ -36,12 +37,15 @@
     color: black;
     box-shadow: $shadow-link-black5;
     transition: all 0.3s;
-    &:hover{
+
+    &:hover {
       box-shadow: $shadow-link-black10;
     }
-    &:active{
-      transition: box-shadow 0.1s;
+
+    &:active {
+      transition: all 0.1s;
       box-shadow: $shadow-link-black3;
+      transform: scale(0.99);
     }
   }
 }

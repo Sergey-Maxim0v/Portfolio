@@ -6,12 +6,14 @@
   box-sizing: border-box;
   width: auto;
   transition: all 0.2s;
-  color: rgba(0,0,0,0.3);
+  color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  &:hover{
-    color: rgba(0,0,0,1);
+
+  &:hover {
+    color: rgba(0, 0, 0, 1);
   }
-  &Sec{
+
+  &Sec {
     width: auto;
     box-sizing: border-box;
     white-space: nowrap;
@@ -21,13 +23,20 @@
     transition: all 0.3s;
     box-shadow: $shadow-link-grey;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       transform: scale(1.1);
-      border: 1px solid rgba(0,0,0,0.3);
+      border: 1px solid rgba(0, 0, 0, 0.3);
       box-shadow: $shadow-link-black5;
     }
-    &Active{
-      color: rgba(0,0,0,1);
+
+    &:active {
+      transition: all 0.1s;
+      transform: scale(1.07);
+    }
+
+    &Active {
+      color: rgba(0, 0, 0, 1);
       box-shadow: $shadow-link-black5;
     }
   }
