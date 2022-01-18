@@ -40,12 +40,13 @@
 
     &:hover {
       box-shadow: $shadow-link-black10;
+      transform: scale(1.03);
     }
 
     &:active {
       transition: all 0.1s;
-      box-shadow: $shadow-link-black3;
-      transform: scale(0.99);
+      box-shadow: $shadow-link-black5;
+      transform: scale(1.01);
     }
   }
 }

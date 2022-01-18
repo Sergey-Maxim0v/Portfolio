@@ -1,10 +1,15 @@
 .navBar {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
   left: 0;
   top: 50%;
   transform: translate(0, -50%);
   box-sizing: border-box;
   width: auto;
+  height: 200px;
   transition: all 0.2s;
   color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
@@ -14,25 +19,35 @@
   }
 
   &Sec {
-    width: auto;
+    width: 128px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     box-sizing: border-box;
     white-space: nowrap;
-    padding: 10px 10px 10px 20px;
-    margin: 5px 0;
+    padding: 0 0 0 20px;
     border-radius: 0 30px 30px 0;
     transition: all 0.3s;
     box-shadow: $shadow-link-grey;
     cursor: pointer;
+    &Row{
+      width: auto;
+      height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
       border: 1px solid rgba(0, 0, 0, 0.3);
       box-shadow: $shadow-link-black5;
     }
 
     &:active {
       transition: all 0.1s;
-      transform: scale(1.07);
+      transform: scale(1.02);
     }
 
     &Active {
