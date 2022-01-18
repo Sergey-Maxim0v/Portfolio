@@ -1,8 +1,7 @@
 import scrollingWorks from "./scrollingWorks";
+import state from "./state"
 
-const nodeSections = document.querySelector('.sections');
-const arrNodeNavBarButtons = document.querySelectorAll('.navBarSec');
-const height = nodeSections.clientHeight;
+const {nodeSections, arrNodeNavBarButtons, height} = {...state}
 
 let activePictureIndex = 0;
 let transitionEnd = true;
@@ -67,9 +66,7 @@ function clickNavBar() {
 
 function selectPageDisplay(n) {
 	activePictureIndex = n;
-	nodeSections.style.transform = `translateY(-${
-		activePictureIndex * height
-	}px)`;
+	nodeSections.style.transform = `translateY(-${activePictureIndex * height}px)`;
 }
 
 function removeStyleNavButtons(style) {
@@ -85,17 +82,13 @@ function setActivePage(value) {
 		}
 		removeStyleNavButtons('navBarSecActive');
 		arrNodeNavBarButtons[activePictureIndex].classList.add('navBarSecActive');
-		nodeSections.style.transform = `translateY(-${
-			activePictureIndex * height
-		}px)`;
+		nodeSections.style.transform = `translateY(-${activePictureIndex * height}px)`;
 	} else if (value === 'down') {
 		if (activePictureIndex + 1 <= 3) {
 			activePictureIndex += 1;
 		}
 		removeStyleNavButtons('navBarSecActive');
 		arrNodeNavBarButtons[activePictureIndex].classList.add('navBarSecActive');
-		nodeSections.style.transform = `translateY(-${
-			activePictureIndex * height
-		}px)`;
+		nodeSections.style.transform = `translateY(-${activePictureIndex * height}px)`;
 	}
 }
