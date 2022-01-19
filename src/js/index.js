@@ -1,16 +1,23 @@
 import scrollingWorks from "./scrollingWorks";
 import state from "./state"
 
-const {nodeSections, arrNodeNavBarButtons, height} = {...state}
+const {
+	nodeSections,
+	arrNodeNavBarButtons,
+	height,
+	setActivePageIndex,
+	setActivePage,
+	removeStyleNavButtons,
+} = state
 
-let activePictureIndex = 0;
-let transitionEnd = true;
+let transitionEnd = false
 
+setActivePageIndex.call(state, 1)
 arrNodeNavBarButtons[0].classList.add('navBarSecActive');
 
-clickNavBar();
-pushKeyArrows();
-scrollMouseWheel();
+clickNavBar()
+pushKeyArrows()
+scrollMouseWheel()
 scrollingWorks()
 
 // scroll Mouse Wheel
@@ -21,18 +28,18 @@ function scrollMouseWheel() {
 			return;
 		}
 		if (event.deltaY < 0) {
-			setActivePage('up');
+			setActivePage.call(state, 'up');
 		} else if (event.deltaY > 0) {
-			setActivePage('down');
+			setActivePage.call(state, 'down');
 		}
-		if (activePictureIndex !== 0 && activePictureIndex !== 3) {
-			transitionEnd = false;
+		if (state.activePageIndex !== 0 && state.activePageIndex !== 3) {
+			transitionEnd = false
 		}
 	});
 }
 
 nodeSections.addEventListener('transitionend', () => {
-	transitionEnd = true;
+	transitionEnd = true
 });
 
 // push Key Arrows
@@ -40,9 +47,10 @@ nodeSections.addEventListener('transitionend', () => {
 function pushKeyArrows() {
 	document.addEventListener('keyup', (event) => {
 		if (event.key === 'ArrowUp') {
-			setActivePage('up');
-		} else if (event.key === 'ArrowDown') {
-			setActivePage('down');
+			setActivePage.call(state, 'up');
+		}
+		if (event.key === 'ArrowDown') {
+			setActivePage.call(state, 'down');
 		}
 	});
 }
@@ -54,41 +62,11 @@ function clickNavBar() {
 	for (let i = 0; i < arrNodeNavBarButtons.length; i++) {
 		arrNodeNavBarButtons[i].addEventListener('click', (event) => {
 			if (event) {
-				selectPageDisplay(i);
-				removeStyleNavButtons('navBarSecActive');
+				setActivePageIndex.call(state, i)
+				nodeSections.style.transform = `translateY(-${i * height}px)`;
+				removeStyleNavButtons.call(state, 'navBarSecActive');
 				arrNodeNavBarButtons[i].classList.add('navBarSecActive');
 			}
 		});
-	}
-}
-
-// helpers
-
-function selectPageDisplay(n) {
-	activePictureIndex = n;
-	nodeSections.style.transform = `translateY(-${activePictureIndex * height}px)`;
-}
-
-function removeStyleNavButtons(style) {
-	for (let el of arrNodeNavBarButtons) {
-		el.classList.remove(style);
-	}
-}
-
-function setActivePage(value) {
-	if (value === 'up') {
-		if (activePictureIndex - 1 >= 0) {
-			activePictureIndex -= 1;
-		}
-		removeStyleNavButtons('navBarSecActive');
-		arrNodeNavBarButtons[activePictureIndex].classList.add('navBarSecActive');
-		nodeSections.style.transform = `translateY(-${activePictureIndex * height}px)`;
-	} else if (value === 'down') {
-		if (activePictureIndex + 1 <= 3) {
-			activePictureIndex += 1;
-		}
-		removeStyleNavButtons('navBarSecActive');
-		arrNodeNavBarButtons[activePictureIndex].classList.add('navBarSecActive');
-		nodeSections.style.transform = `translateY(-${activePictureIndex * height}px)`;
 	}
 }
