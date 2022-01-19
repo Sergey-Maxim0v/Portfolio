@@ -2,9 +2,11 @@ const projects = document.querySelector('.section3Projects')
 const leftBtn = document.querySelector('.section3BtnLeft')
 const rightBtn = document.querySelector('.section3BtnRight')
 const projectsAmount = document.querySelectorAll('.section3Project').length
-let scrollWorksIndex = 0;
+
+let scrollWorksIndex = 0
 
 const scrollingWorks = () => {
+	scrollWorksIndex = 0
 
 	worksButtonOpacity(scrollWorksIndex)
 
