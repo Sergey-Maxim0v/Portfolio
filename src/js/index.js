@@ -1,4 +1,5 @@
-import scrollingWorks from "./scrollingWorks";
+import removeStyleNavButtons from "./removeStyleNavButtons";
+import animatingPages from "./animatingPages";
 import state from "./state"
 
 const {
@@ -7,18 +8,16 @@ const {
 	height,
 	setActivePageIndex,
 	setActivePage,
-	removeStyleNavButtons,
 } = state
 
-let transitionEnd = false
+let transitionEnd = true
 
-setActivePageIndex.call(state, 1)
-arrNodeNavBarButtons[0].classList.add('navBarSecActive');
+arrNodeNavBarButtons[0].classList.add('navBarSecActive')
 
+animatingPages(state.activePageIndex)
 clickNavBar()
 pushKeyArrows()
 scrollMouseWheel()
-scrollingWorks()
 
 // scroll Mouse Wheel
 
@@ -28,9 +27,10 @@ function scrollMouseWheel() {
 			return;
 		}
 		if (event.deltaY < 0) {
-			setActivePage.call(state, 'up');
-		} else if (event.deltaY > 0) {
-			setActivePage.call(state, 'down');
+			setActivePage.call(state, 'up')
+		}
+		if (event.deltaY > 0) {
+			setActivePage.call(state, 'down')
 		}
 		if (state.activePageIndex !== 0 && state.activePageIndex !== 3) {
 			transitionEnd = false
@@ -47,12 +47,12 @@ nodeSections.addEventListener('transitionend', () => {
 function pushKeyArrows() {
 	document.addEventListener('keyup', (event) => {
 		if (event.key === 'ArrowUp') {
-			setActivePage.call(state, 'up');
+			setActivePage.call(state, 'up')
 		}
 		if (event.key === 'ArrowDown') {
-			setActivePage.call(state, 'down');
+			setActivePage.call(state, 'down')
 		}
-	});
+	})
 }
 
 
@@ -63,10 +63,11 @@ function clickNavBar() {
 		arrNodeNavBarButtons[i].addEventListener('click', (event) => {
 			if (event) {
 				setActivePageIndex.call(state, i)
-				nodeSections.style.transform = `translateY(-${i * height}px)`;
-				removeStyleNavButtons.call(state, 'navBarSecActive');
-				arrNodeNavBarButtons[i].classList.add('navBarSecActive');
+				nodeSections.style.transform = `translateY(-${i * height}px)`
+				removeStyleNavButtons.call(state, 'navBarSecActive')
+				arrNodeNavBarButtons[i].classList.add('navBarSecActive')
+				animatingPages(i)
 			}
-		});
+		})
 	}
 }

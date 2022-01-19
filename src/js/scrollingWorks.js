@@ -6,7 +6,7 @@ const projectsAmount = document.querySelectorAll('.section3Project').length
 const scrollingWorks = () => {
 	let scrollWorksIndex = 0;
 
-	leftBtn.style.opacity = '0.3'
+	buttonOpacity(scrollWorksIndex)
 
 	leftBtn.addEventListener('click', () => {
 		rightBtn.style.opacity = '1'
