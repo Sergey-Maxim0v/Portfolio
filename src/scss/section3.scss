@@ -67,11 +67,78 @@
   }
 
   &Project {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 300px;
-    min-width: 300px;
-    height: 360px;
+    justify-content: space-between;
+    padding: 50px 40px 30px 40px;
+    transition: all 0.3s;
+    background-color: white;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &Row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      min-width: 300px;
+      height: 360px;
+      position: relative;
+      transition: all 0.3s;
+
+      &:hover {
+        background-size: 150%;
+      }
+    }
+
+    &Title {
+      text-align: center;
+      font-size: $font-size__title-4;
+
+    }
+
+    &Desc {
+      text-align: center;
+      font-size: $font-size__title-5;
+    }
+
+    &Link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 210px;
+      height: 36px;
+      border-radius: 30px;
+      text-align: center;
+      color: black;
+      box-shadow: $shadow-link-black5;
+      transition: all 0.3s;
+
+      &Row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+      }
+
+      &:hover {
+        box-shadow: $shadow-link-black10;
+        transform: scale(1.03);
+      }
+
+      &:active {
+        transition: all 0.1s;
+        box-shadow: $shadow-link-black5;
+        transform: scale(1.01);
+      }
+    }
+
   }
 }

@@ -14,10 +14,10 @@ function animatingPages(index) {
 	}
 
 	if (index === 2) {
-		// if(!section2Status){
+		if(!section2Status){
 			scrollingWorks()
-	// 	}
-	// 	section2Status = true
+		}
+		section2Status = true
 	}
 
 	if (index === 3) {

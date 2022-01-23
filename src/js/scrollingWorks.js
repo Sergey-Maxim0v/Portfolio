@@ -1,5 +1,3 @@
-import state from "./state";
-
 const projects = document.querySelector('.section3Projects')
 const leftBtn = document.querySelector('.section3BtnLeft')
 const rightBtn = document.querySelector('.section3BtnRight')
@@ -17,7 +15,6 @@ const scrollingWorks = () => {
 }
 
 function worksButtonOpacity(scrollWorksIndex) {
-	console.log(scrollWorksIndex)
 	if (scrollWorksIndex === 0) {
 		leftBtn.style.opacity = '0.3'
 	}
