@@ -7,6 +7,10 @@
   z-index: 100;
   padding: 100px 150px 100px;
 
+  @include media(phone-lg) {
+    padding: 60px;
+  }
+
   &Content {
     display: flex;
     flex-direction: column;
@@ -24,8 +28,10 @@
 
   &Links {
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     align-items: center;
+    justify-content: center;
   }
 
   &Link {
@@ -37,6 +43,12 @@
     border-radius: 30px;
     margin: 20px;
     transition: all 0.3s;
+
+    @include media(phone-lg) {
+      margin: 10px;
+      width: 40px;
+      height: 40px;
+    }
 
     &:hover {
       transform: scale(1.1);
@@ -56,6 +68,11 @@
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include media(phone-lg) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &Link2 {
@@ -64,6 +81,11 @@
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include media(phone-lg) {
+      width: 45px;
+      height: 45px;
+    }
   }
 
   &Link3 {
@@ -73,6 +95,11 @@
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include media(phone-lg) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &Link4 {
@@ -82,7 +109,12 @@
     border-radius: 23%;
     background-size: 100%;
     background-position: center;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+
+    @include media(phone-lg) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &Link5 {
@@ -92,7 +124,12 @@
     border-radius: 20%;
     background-size: 100%;
     background-position: center;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+
+    @include media(phone-lg) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &Signature {
@@ -102,6 +139,11 @@
 
     & p {
       padding: 10px 20px 20px 20px;
+
+      @include media(phone-lg) {
+        padding: 10px 10px 20px 10px;
+        text-align: center;
+      }
     }
 
     &Name {

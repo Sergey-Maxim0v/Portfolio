@@ -9,26 +9,50 @@
     padding: 60px 60px 200px 60px;
   }
 
+  @include media(phone-lg) {
+    padding: 40px 40px 100px 40px;
+    justify-content: space-around;
+  }
+
   &Title {
     font-size: $font-size__title-1;
     margin: 0 0 40px 0;
     text-align: center;
+
+    @include media(phone-lg) {
+      font-size: $font-size__content;
+      margin: 0 0 20px 0;
+    }
   }
 
   &Name {
     font-size: $font-size__title-3;
     margin: 0 0 40px 0;
     text-align: center;
+
+    @include media(phone-lg) {
+      font-size: $font-size__content;
+      margin: 0 0 20px 0;
+    }
   }
 
   &Text1 {
     text-align: center;
     margin: 0 0 10px 0;
+
+    @include media(phone-lg) {
+      font-size: $font-size__footer;
+    }
   }
 
   &Text2 {
     text-align: center;
     margin: 0 0 40px 0;
+
+    @include media(phone-lg) {
+      font-size: $font-size__footer;
+      margin: 0;
+    }
   }
 
   &BtnDownload {

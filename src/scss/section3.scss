@@ -9,9 +9,18 @@
     padding: 60px 60px 200px 60px;
   }
 
+  @include media(phone-lg) {
+    padding: 40px 5px 100px 5px;
+  }
+
   &Title {
     font-size: $font-size__title-4;
     margin: 0 0 30px 0;
+
+    @include media(phone-lg) {
+      font-size: $font-size__content;
+      margin: 0 0 20px 0;
+    }
   }
 
   &Content {
@@ -19,6 +28,7 @@
     align-items: center;
     justify-content: space-between;
     width: 95%;
+
   }
 
   &Btn {
@@ -28,13 +38,26 @@
     border-radius: 50%;
     transition: all 0.3s;
 
+    @include media(phone-lg) {
+      width: 40px;
+      height: 40px;
+    }
+
     &:hover {
       transform: scale(1.1);
+
+      @include media(phone-lg) {
+        transform: scale(1);
+      }
     }
 
     &:active {
       transition: all 0.1s;
       transform: scale(1.05);
+
+      @include media(phone-lg) {
+        transform: scale(1);
+      }
     }
   }
 
@@ -60,6 +83,7 @@
     position: relative;
     display: flex;
     box-shadow: $shadow-link-black5;
+
   }
 
   &Projects {
@@ -95,6 +119,12 @@
       z-index: 0;
     }
 
+    @include media(phone-lg) {
+      width: 300px;
+      align-items: flex-start;
+      padding: 20px 70px 20px 20px;
+    }
+
     &:hover {
       background-color: rgba(255, 255, 255, 1);
       opacity: 1;
@@ -121,6 +151,13 @@
         background-size: 100%;
         background-position: top;
         box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+      }
+
+      @include media(phone-lg) {
+        height: 300px;
+        width: 300px;
+        background-position: top;
+        background-size: 100% 60%;
       }
 
       &:hover {
@@ -180,6 +217,10 @@
       @include media(tablet-lg) {
         font-size: $font-size__content;
       }
+
+      @include media(tablet) {
+        font-size: $font-size__footer;
+      }
     }
 
     &Desc {
@@ -188,6 +229,14 @@
 
       @include media(tablet-lg) {
         font-size: $font-size__content;
+      }
+
+      @include media(tablet) {
+        font-size: $font-size__footer;
+      }
+
+      @include media(phone-lg) {
+        text-align: left;
       }
     }
 
@@ -208,6 +257,10 @@
         height: 26px;
       }
 
+      @include media(tablet) {
+        font-size: $font-size__footer;
+      }
+
       &Row {
         display: flex;
         flex-direction: column;
@@ -217,7 +270,6 @@
 
         @include media(tablet-lg) {
           height: 60px;
-
         }
       }
 
@@ -233,4 +285,5 @@
       }
     }
   }
+
 }
