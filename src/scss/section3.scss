@@ -75,13 +75,24 @@
     align-items: center;
     justify-content: space-between;
     padding: 50px 40px 30px 40px;
-    background-color: rgba(255,255,255,0);
-    box-shadow: 0 0 30px rgba(0,0,0,1);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 1);
     z-index: 100;
     transition: opacity 0.3s, background-color 0.5s;
 
+    @include media(tablet-lg) {
+      height: 180px;
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 1);
+      opacity: 1;
+      padding: 20px;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+      z-index: 0;
+    }
+
     &:hover {
-      background-color: rgba(255,255,255,1);
+      background-color: rgba(255, 255, 255, 1);
       opacity: 1;
       z-index: 1000;
     }
@@ -98,6 +109,15 @@
       background-position: center;
       background-repeat: no-repeat;
       transition: all 0.5s;
+
+      @include media(tablet-lg) {
+        width: 250px;
+        min-width: 250px;
+        height: 360px;
+        background-size: 100%;
+        background-position: top;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+      }
 
       &:hover {
         background-size: 150%;
@@ -153,11 +173,18 @@
       text-align: center;
       font-size: $font-size__title-4;
 
+      @include media(tablet-lg) {
+        font-size: $font-size__content;
+      }
     }
 
     &Desc {
       text-align: center;
       font-size: $font-size__title-5;
+
+      @include media(tablet-lg) {
+        font-size: $font-size__content;
+      }
     }
 
     &Link {
@@ -172,12 +199,22 @@
       box-shadow: $shadow-link-black5;
       transition: all 0.3s;
 
+      @include media(tablet-lg) {
+        font-size: $font-size__content;
+        height: 26px;
+      }
+
       &Row {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         height: 100px;
+
+        @include media(tablet-lg) {
+          height: 60px;
+
+        }
       }
 
       &:hover {

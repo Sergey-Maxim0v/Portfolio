@@ -5,6 +5,10 @@
   justify-content: center;
   padding:  50px 135px 50px;
 
+  @include media(tablet-lg) {
+    padding: 100px 150px 100px;;
+  }
+
   &Title {
     font-size: $font-size__title-3;
   }
@@ -37,6 +41,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include media(tablet-lg) {
+        width: 500px;
+        height: auto;
+        flex-wrap: wrap;
+      }
     }
     &Image{
       margin: 5px;
