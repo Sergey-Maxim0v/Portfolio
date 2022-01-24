@@ -14,6 +14,10 @@
   color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
 
+  @include media(tablet) {
+    display: none
+  }
+
   &:hover {
     color: rgba(0, 0, 0, 1);
   }
@@ -31,7 +35,8 @@
     transition: all 0.3s;
     box-shadow: $shadow-link-grey;
     cursor: pointer;
-    &Row{
+
+    &Row {
       width: auto;
       height: 43px;
       display: flex;

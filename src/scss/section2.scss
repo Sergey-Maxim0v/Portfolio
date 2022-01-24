@@ -9,6 +9,10 @@
     padding: 100px 150px 100px;;
   }
 
+  @include media(tablet) {
+    padding: 60px 60px 200px 60px;
+  }
+
   &Title {
     font-size: $font-size__title-3;
   }

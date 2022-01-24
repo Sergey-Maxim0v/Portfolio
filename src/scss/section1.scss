@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
 
+  @include media(tablet) {
+    padding: 60px 60px 200px 60px;
+  }
+
   &Title {
     font-size: $font-size__title-1;
     margin: 0 0 40px 0;

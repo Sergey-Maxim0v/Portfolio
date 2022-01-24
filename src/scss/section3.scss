@@ -5,6 +5,10 @@
   justify-content: center;
   padding: $padding-page-desktop;
 
+  @include media(tablet) {
+    padding: 60px 60px 200px 60px;
+  }
+
   &Title {
     font-size: $font-size__title-4;
     margin: 0 0 30px 0;
@@ -87,7 +91,7 @@
       background-color: rgba(255, 255, 255, 1);
       opacity: 1;
       padding: 20px;
-      box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
       z-index: 0;
     }
 
