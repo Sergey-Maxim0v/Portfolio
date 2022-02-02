@@ -132,6 +132,36 @@
     }
   }
 
+  &Link6 {
+    background-image: url('../../assets/images/logo-gitlab.svg');
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include media(phone-lg) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &Link7 {
+    background-image: url('../../assets/images/logo-telegramm.svg');
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: 210%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include media(phone-lg) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
   &Signature {
     position: absolute;
     bottom: 0;

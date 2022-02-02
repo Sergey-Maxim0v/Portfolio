@@ -61,8 +61,8 @@ function pushKeyArrows() {
 // push Nav Buttons
 
 function pushNavBtns() {
-    navBtnUp.addEventListener('click', (event) => setActivePage.call(state, 'up'))
-    navBtnDown.addEventListener('click', (event) => setActivePage.call(state, 'down'))
+    navBtnUp.addEventListener('click', () => setActivePage.call(state, 'up'))
+    navBtnDown.addEventListener('click', () => setActivePage.call(state, 'down'))
 }
 
 
