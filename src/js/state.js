@@ -3,6 +3,8 @@ import animatingPages from "./animatingPages";
 
 const state = {
 	arrNodeNavBarButtons: document.querySelectorAll('.navBarSec'),
+	navBtnUp: document.querySelector('.navBtnUp'),
+	navBtnDown: document.querySelector('.navBtnDown'),
 	nodeSections: document.querySelector('.sections'),
 	height: document.querySelector('.sections').clientHeight,
 
