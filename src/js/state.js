@@ -1,5 +1,4 @@
 import removeStyleNavButtons from "./removeStyleNavButtons";
-import animatingPages from "./animatingPages";
 
 const state = {
     body: document.querySelector('body'),
@@ -34,7 +33,6 @@ const state = {
             this.arrNodeNavBarButtons[this.activePageIndex].classList.add('navBarSecActive');
             this.nodeSections.style.transform = `translateY(-${this.activePageIndex * this.height}px)`
         }
-        animatingPages(this.activePageIndex)
     },
 }
 

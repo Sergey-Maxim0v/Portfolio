@@ -1,7 +1,7 @@
 import removeStyleNavButtons from "./removeStyleNavButtons";
-import animatingPages from "./animatingPages";
 import state from "./state"
 import moveTitleSection1BackGround from "./moveTitleSection1BackGround";
+import scrollingWorks from "./scrollingWorks";
 
 const {
     nodeSections,
@@ -17,12 +17,12 @@ let transitionEnd = true
 
 arrNodeNavBarButtons[0].classList.add('navBarSecActive')
 
-animatingPages(state.activePageIndex)
 clickNavBar()
 pushKeyArrows()
 scrollMouseWheel()
 pushNavBtns()
 moveTitleSection1BackGround()
+scrollingWorks()
 
 // scroll Mouse Wheel
 
@@ -78,7 +78,6 @@ function clickNavBar() {
                 nodeSections.style.transform = `translateY(-${i * height}px)`
                 removeStyleNavButtons.call(state, 'navBarSecActive')
                 arrNodeNavBarButtons[i].classList.add('navBarSecActive')
-                animatingPages(i)
             }
         })
     }

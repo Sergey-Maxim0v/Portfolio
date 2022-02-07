@@ -27,6 +27,7 @@
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
+    transition: all 0.5s;
 
     @include media(phone-lg) {
       font-size: $font-size__content;
