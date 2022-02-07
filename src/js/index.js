@@ -1,6 +1,7 @@
 import removeStyleNavButtons from "./removeStyleNavButtons";
 import animatingPages from "./animatingPages";
 import state from "./state"
+import moveTitleSection1BackGround from "./moveTitleSection1BackGround";
 
 const {
     nodeSections,
@@ -21,6 +22,7 @@ clickNavBar()
 pushKeyArrows()
 scrollMouseWheel()
 pushNavBtns()
+moveTitleSection1BackGround()
 
 // scroll Mouse Wheel
 

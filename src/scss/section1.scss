@@ -16,8 +16,17 @@
 
   &Title {
     font-size: $font-size__title-1;
+    font-weight: 900;
     margin: 0 0 40px 0;
     text-align: center;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(70deg, rgb(0, 0, 0) 40%, rgb(153, 204, 255) 46%, rgb(0, 0, 0) 60%);
+    background: -moz-linear-gradient(70deg, rgb(0, 0, 0) 40%, rgb(153, 204, 255) 46%, rgb(0, 0, 0) 60%);
+    background: linear-gradient(70deg, rgb(0, 0, 0) 40%, rgb(153, 204, 255) 46%, rgb(0, 0, 0) 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
 
     @include media(phone-lg) {
       font-size: $font-size__content;
