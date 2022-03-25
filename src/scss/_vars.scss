@@ -19,8 +19,8 @@ $white: #fff;
 $shadow-link-white: 0px 0px 5px rgba(255, 255, 255, 0.5);
 $shadow-link-grey: 0px 0px 5px rgba(0, 0, 0, 0.5);
 $shadow-link-black3: 0px 0px 2px rgba(0, 0, 0, 1);
-$shadow-link-black5: 0px 0px 5px rgba(0, 0, 0, 1);
-$shadow-link-black10: 0px 0px 10px rgba(0, 0, 0, 1);
+$shadow-link-black5: inset 0px 0px 5px rgba(0, 0, 0, 1);
+$shadow-link-black10: inset 0px 0px 10px rgba(0, 0, 0, 1);
 
 // Paddings
 $padding-page-desktop: 100px 135px 50px;

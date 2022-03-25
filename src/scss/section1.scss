@@ -77,13 +77,13 @@
     transition: all 0.3s;
 
     &:hover {
-      box-shadow: $shadow-link-black10;
+      box-shadow: $shadow-link-black5;
       transform: scale(1.03);
     }
 
     &:active {
       transition: all 0.1s;
-      box-shadow: $shadow-link-black5;
+      box-shadow: $shadow-link-black10;
       transform: scale(1.01);
     }
   }
