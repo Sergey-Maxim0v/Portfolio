@@ -1,60 +1,41 @@
 import removeStyleNavButtons from "./removeStyleNavButtons";
-import state from "./state"
 import moveTitleSection1BackGround from "./moveTitleSection1BackGround";
 import scrollingWorks from "./scrollingWorks";
 import circlesAnimation from "./circlesAnimation";
 
-const {
-  nodeSections,
-  arrNodeNavBarButtons,
-  height,
-  setActivePageIndex,
-  setActivePage,
-  navBtnUp,
-  navBtnDown,
-} = state
-
-let transitionEnd = true
+const arrNodeNavBarButtons = document.querySelectorAll('.navBarSec')
+const navBtnUp = document.querySelector('.navBtnUp')
+const navBtnDown = document.querySelector('.navBtnDown')
 
 arrNodeNavBarButtons[0].classList.add('navBarSecActive')
 
-clickNavBar()
-pushKeyArrows()
-scrollMouseWheel()
-pushNavBtns()
 moveTitleSection1BackGround()
 scrollingWorks()
 circlesAnimation()
-
-// scroll Mouse Wheel
-
-function scrollMouseWheel() {
-  document.addEventListener('wheel', (event) => {
-    if (!transitionEnd) {
-      return;
-    }
-    if (event.deltaY < 0) {
-      setActivePage.call(state, 'up')
-    }
-    if (event.deltaY > 0) {
-      setActivePage.call(state, 'down')
-    }
-    transitionEnd = false
-    setTimeout(()=>{
-      transitionEnd = true
-    }, 1000)
-  });
-}
+clickNavBar()
+pushKeyArrows()
+pushNavBtns()
 
 // push Key Arrows
 
 function pushKeyArrows() {
-  document.addEventListener('keyup', (event) => {
-    if (event.key === 'ArrowUp') {
-      setActivePage.call(state, 'up')
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === ' ') {
+      event.preventDefault()
     }
-    if (event.key === 'ArrowDown') {
-      setActivePage.call(state, 'down')
+  })
+
+  document.addEventListener('keyup', (event) => {
+    const visibleHeight = document.documentElement.clientHeight
+    const scrollTop = document.documentElement.scrollTop
+    const visibleSection = Math.round(scrollTop / visibleHeight)
+
+    if (event.key === 'ArrowUp') {
+      window.scrollTo({top: visibleHeight * (visibleSection - 1), behavior: "smooth"})
+    }
+
+    if (event.key === 'ArrowDown' || event.key === ' ') {
+      window.scrollTo({top: visibleHeight * (visibleSection + 1), behavior: "smooth"})
     }
   })
 }
@@ -62,25 +43,50 @@ function pushKeyArrows() {
 // push Nav Buttons
 
 function pushNavBtns() {
-  navBtnUp.addEventListener('click', () => setActivePage.call(state, 'up'))
-  navBtnDown.addEventListener('click', () => setActivePage.call(state, 'down'))
+  navBtnUp.addEventListener('click', () => {
+    const visibleHeight = document.documentElement.clientHeight
+    const scrollTop = document.documentElement.scrollTop
+    const visibleSection = Math.round(scrollTop / visibleHeight)
+
+    window.scrollTo({
+      top: visibleHeight * (visibleSection - 1),
+      behavior: "smooth"
+    });
+  })
+
+  navBtnDown.addEventListener('click', () => {
+    const visibleHeight = document.documentElement.clientHeight
+    const scrollTop = document.documentElement.scrollTop
+    const visibleSection = Math.round(scrollTop / visibleHeight)
+
+    window.scrollTo({
+      top: visibleHeight * (visibleSection + 1),
+      behavior: "smooth"
+    });
+  })
 }
 
-
-// clickNavBar
+// click NavBar
 
 function clickNavBar() {
   for (let i = 0; i < arrNodeNavBarButtons.length; i++) {
     arrNodeNavBarButtons[i].addEventListener('click', (event) => {
       if (event) {
-        setActivePageIndex.call(state, i)
-        nodeSections.style.transform = `translateY(-${i * height}px)`
-        removeStyleNavButtons.call(state, 'navBarSecActive')
-        arrNodeNavBarButtons[i].classList.add('navBarSecActive')
+        const visibleHeight = document.documentElement.clientHeight
+
+        window.scrollTo({top: visibleHeight * i, behavior: "smooth"})
       }
     })
   }
 }
 
+// styles nav. buttons
 
+document.addEventListener('scroll', () => {
+  const visibleHeight = document.documentElement.clientHeight
+  const scrollTop = document.documentElement.scrollTop
+  const visibleSection = Math.round(scrollTop / visibleHeight)
 
+  removeStyleNavButtons('navBarSecActive');
+  arrNodeNavBarButtons[visibleSection].classList.add('navBarSecActive');
+})

@@ -1,14 +1,11 @@
 import movementOfCircles from "./movementOfCircles";
 import changeOfSize from "./changeOfSize";
-import state from "./state";
 
-const {
-  circle1,
-  circle2,
-  circle3,
-  circle4,
-  circle5,
-} = state
+const circle1 = document.querySelector('.circle_1')
+const circle2 = document.querySelector('.circle_2')
+const circle3 = document.querySelector('.circle_3')
+const circle4 = document.querySelector('.circle_4')
+const circle5 = document.querySelector('.circle_5')
 
 function circlesAnimation() {
   movementOfCircles(circle1, -20, 70)

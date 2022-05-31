@@ -9,32 +9,32 @@
 }
 
 .circle_1 {
-  background: radial-gradient(#FFFFCC, #0000);
+  background: $BG_Circle_1;
   top: -20%;
   left: -20%;
 }
 
 .circle_2 {
-  background: radial-gradient(#CCFFFF, #0000);
+  background: $BG_Circle_2;
   top: 0;
   left: 100%;
 }
 
 .circle_3 {
-  background: radial-gradient(#CCFFCC, #0000);
+  background: $BG_Circle_3;
   top: 100%;
   left: 100%;
 }
 
 .circle_4 {
-  background-color: white;
+  background-color: $white;
   opacity: 0.3;
   top: 100%;
   left: 0;
 }
 
 .circle_5 {
-  background-color: white;
+  background-color: $white;
   opacity: 0.5;
   top: 100%;
   left: 100%;

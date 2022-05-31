@@ -1,48 +1,15 @@
 body {
-  font-family: 'Open Sans';
+  font-family: $font__open-sans;
   font-weight: 400;
   font-size: $font-size__content;
-  height: 100vh;
 }
 
 .mainLayout {
   position: relative;
-  overflow: hidden;
-}
-
-.styleButton {
-  position: fixed;
-  right: 40px;
-  top: 40px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s;
-  opacity: 0.5;
-  z-index: 1000;
-  background-image: url('../../assets/images/logo-sun-dark.svg');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: none;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.sections {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  transition: transform 0.8s;
+  overflow-x: hidden;
 }
 
 .section {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
