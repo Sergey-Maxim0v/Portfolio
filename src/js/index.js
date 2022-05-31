@@ -39,15 +39,12 @@ function scrollMouseWheel() {
     if (event.deltaY > 0) {
       setActivePage.call(state, 'down')
     }
-    if (state.activePageIndex !== 0 && state.activePageIndex !== 3) {
-      transitionEnd = false
-    }
+    transitionEnd = false
+    setTimeout(()=>{
+      transitionEnd = true
+    }, 1000)
   });
 }
-
-nodeSections.addEventListener('transitionend', () => {
-  transitionEnd = true
-});
 
 // push Key Arrows
 
