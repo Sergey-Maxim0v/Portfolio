@@ -7,10 +7,9 @@ import pushScrollBtns from "./pushScrollBtns";
 import clickNavbarBtns from "./clickNavbarBtns";
 import setSection3ProjectStyles from "./setSection3ProjectStyles";
 
-
 // init scripts
 setStylesNavbar()
-// setSection3ProjectStyles()
+setSection3ProjectStyles()
 
 // background
 circlesAnimation()
@@ -25,7 +24,7 @@ moveTitleSection1BackGround()
 
 // section 3
 scrollingWorks()
-document.addEventListener('transitionend', () => setSection3ProjectStyles())
+window.addEventListener('resize', () => setSection3ProjectStyles())
 
 // styles nav. buttons
 document.addEventListener('scroll', () => setStylesNavbar())
