@@ -2,84 +2,30 @@ import moveTitleSection1BackGround from "./moveTitleSection1BackGround";
 import scrollingWorks from "./scrollingWorks";
 import circlesAnimation from "./circlesAnimation";
 import setStylesNavbar from "./setStylesNavbar";
+import pushKeyboardArrows from "./pushKeyboardArrows";
+import pushScrollBtns from "./pushScrollBtns";
+import clickNavbarBtns from "./clickNavbarBtns";
+import setSection3ProjectStyles from "./setSection3ProjectStyles";
 
-const arrNodeNavBarButtons = document.querySelectorAll('.navBarSec')
-const navBtnUp = document.querySelector('.navBtnUp')
-const navBtnDown = document.querySelector('.navBtnDown')
 
+// init scripts
 setStylesNavbar()
+// setSection3ProjectStyles()
 
-moveTitleSection1BackGround()
-scrollingWorks()
+// background
 circlesAnimation()
-clickNavBar()
-pushKeyArrows()
-pushNavBtns()
 
-// push Key Arrows
+// scroll
+pushScrollBtns()
+pushKeyboardArrows()
+clickNavbarBtns()
 
-function pushKeyArrows() {
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === ' ') {
-      event.preventDefault()
-    }
-  })
+// section 1
+moveTitleSection1BackGround()
 
-  document.addEventListener('keyup', (event) => {
-    const visibleHeight = document.documentElement.clientHeight
-    const scrollTop = document.documentElement.scrollTop
-    const visibleSection = Math.round(scrollTop / visibleHeight)
-
-    if (event.key === 'ArrowUp') {
-      window.scrollTo({top: visibleHeight * (visibleSection - 1), behavior: "smooth"})
-    }
-
-    if (event.key === 'ArrowDown' || event.key === ' ') {
-      window.scrollTo({top: visibleHeight * (visibleSection + 1), behavior: "smooth"})
-    }
-  })
-}
-
-// push Nav Buttons
-
-function pushNavBtns() {
-  navBtnUp.addEventListener('click', () => {
-    const visibleHeight = document.documentElement.clientHeight
-    const scrollTop = document.documentElement.scrollTop
-    const visibleSection = Math.round(scrollTop / visibleHeight)
-
-    window.scrollTo({
-      top: visibleHeight * (visibleSection - 1),
-      behavior: "smooth"
-    });
-  })
-
-  navBtnDown.addEventListener('click', () => {
-    const visibleHeight = document.documentElement.clientHeight
-    const scrollTop = document.documentElement.scrollTop
-    const visibleSection = Math.round(scrollTop / visibleHeight)
-
-    window.scrollTo({
-      top: visibleHeight * (visibleSection + 1),
-      behavior: "smooth"
-    });
-  })
-}
-
-// click NavBar
-
-function clickNavBar() {
-  for (let i = 0; i < arrNodeNavBarButtons.length; i++) {
-    arrNodeNavBarButtons[i].addEventListener('click', (event) => {
-      if (event) {
-        const visibleHeight = document.documentElement.clientHeight
-
-        window.scrollTo({top: visibleHeight * i, behavior: "smooth"})
-      }
-    })
-  }
-}
+// section 3
+scrollingWorks()
+document.addEventListener('transitionend',()=>setSection3ProjectStyles())
 
 // styles nav. buttons
-
 document.addEventListener('scroll', () => setStylesNavbar())
