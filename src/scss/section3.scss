@@ -82,7 +82,7 @@
     position: relative;
     display: flex;
     box-shadow: $shadow-link-black5;
-
+    background-color: $white;
   }
 
   &Projects {
@@ -141,6 +141,7 @@
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
+      background-color: $white;
       transition: all 0.5s;
 
       @include media(tablet-lg) {
@@ -207,7 +208,6 @@
     &Row11 {
       background-image: url("../../assets/images/project-zctests.png");
     }
-
 
     &Title {
       text-align: center;
