@@ -1,13 +1,13 @@
-import removeStyleNavButtons from "./removeStyleNavButtons";
 import moveTitleSection1BackGround from "./moveTitleSection1BackGround";
 import scrollingWorks from "./scrollingWorks";
 import circlesAnimation from "./circlesAnimation";
+import setStylesNavbar from "./setStylesNavbar";
 
 const arrNodeNavBarButtons = document.querySelectorAll('.navBarSec')
 const navBtnUp = document.querySelector('.navBtnUp')
 const navBtnDown = document.querySelector('.navBtnDown')
 
-arrNodeNavBarButtons[0].classList.add('navBarSecActive')
+setStylesNavbar()
 
 moveTitleSection1BackGround()
 scrollingWorks()
@@ -82,11 +82,4 @@ function clickNavBar() {
 
 // styles nav. buttons
 
-document.addEventListener('scroll', () => {
-  const visibleHeight = document.documentElement.clientHeight
-  const scrollTop = document.documentElement.scrollTop
-  const visibleSection = Math.round(scrollTop / visibleHeight)
-
-  removeStyleNavButtons('navBarSecActive');
-  arrNodeNavBarButtons[visibleSection].classList.add('navBarSecActive');
-})
+document.addEventListener('scroll', () => setStylesNavbar())
