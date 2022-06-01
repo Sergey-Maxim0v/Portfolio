@@ -8,17 +8,15 @@ const circle4 = document.querySelector('.circle_4')
 const circle5 = document.querySelector('.circle_5')
 
 function circlesAnimation() {
-  movementOfCircles(circle1, -20, 70)
+  movementOfCircles(circle1, -20, 70, 6500)
   changeOfSize(circle1, 30, 60)
-  movementOfCircles(circle2, -20, 70)
+  movementOfCircles(circle2, -20, 70, 7000)
   changeOfSize(circle2, 10, 100)
-  movementOfCircles(circle3, -20, 70)
+  movementOfCircles(circle3, -20, 70, 7500)
   changeOfSize(circle3, 40, 80)
-  movementOfCircles(circle3, 0, 70)
-  changeOfSize(circle3, 40, 80)
-  movementOfCircles(circle4, 0, 70)
+  movementOfCircles(circle4, 0, 70, 6000)
   changeOfSize(circle4, 40, 80)
-  movementOfCircles(circle5, 0, 70)
+  movementOfCircles(circle5, 0, 70, 6000)
   changeOfSize(circle5, 40, 80)
 }
 

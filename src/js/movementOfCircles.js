@@ -1,11 +1,11 @@
 import getRandom from "./getRandom";
 
 
-function movementOfCircles(circle, minXY, maxXY) {
+function movementOfCircles(circle, minXY, maxXY, time) {
   setInterval(() => {
     circle.style.left = `${getRandom(minXY, maxXY)}%`
     circle.style.top = `${getRandom(minXY, maxXY)}%`
-  }, 7000)
+  }, time)
 }
 
 export default movementOfCircles
