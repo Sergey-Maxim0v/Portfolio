@@ -25,7 +25,7 @@ moveTitleSection1BackGround()
 
 // section 3
 scrollingWorks()
-document.addEventListener('transitionend',()=>setSection3ProjectStyles())
+document.addEventListener('transitionend', () => setSection3ProjectStyles())
 
 // styles nav. buttons
 document.addEventListener('scroll', () => setStylesNavbar())

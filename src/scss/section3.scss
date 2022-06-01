@@ -77,11 +77,12 @@
 
   &ProjectsRow {
     width: 100%;
-    max-width: 1400px;
+    max-width: 300px;
     overflow: hidden;
     position: relative;
     display: flex;
     background-color: $white;
+    transition: max-width 0.2s;
   }
 
   &Projects {
