@@ -42,29 +42,29 @@
 
   &Up {
     border-radius: 15px 0 0 15px;
-    box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.5);
     background-image: url("../../assets/images/arrow-up.svg");
+    box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.5);
 
     &:hover {
-      box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 3px 0 10px rgba(0, 0, 0, 0.5);
     }
 
     &:active {
-      box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.5);
     }
   }
 
   &Down {
     border-radius: 0 15px 15px 0;
-    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.5);
     background-image: url("../../assets/images/arrow-down.svg");
+    box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.5);
 
     &:hover {
-      box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+      box-shadow: inset -3px 0 10px rgba(0, 0, 0, 0.5);
     }
 
     &:active {
-      box-shadow: 3px 0 5px rgba(0, 0, 0, 0.5);
+      box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.5);
     }
   }
 }
