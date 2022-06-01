@@ -14,8 +14,9 @@
   }
 
   &Title {
-    font-size: $font-size__title-4;
-    margin: 0 0 30px 0;
+    font-size: $font-size__title-3;
+    position: relative;
+    bottom: 5vh;
 
     @include media(phone-lg) {
       font-size: $font-size__content;

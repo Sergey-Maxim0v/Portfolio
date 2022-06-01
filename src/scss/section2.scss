@@ -3,14 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 135px 50px;
+  padding: 100px 135px 100px;
+  position: relative;
 
   @include media(tablet-lg) {
-    padding: 100px 150px 100px;;
+    padding: 80px 80px 80px 150px;
   }
 
   @include media(tablet) {
-    padding: 60px 60px 200px 60px;
+    padding: 100px 60px 200px 60px;
   }
 
   @include media(phone-lg) {
@@ -19,35 +20,42 @@
 
   &Title {
     font-size: $font-size__title-3;
+    height: 60px;
+    padding-bottom: 20px;
 
     @include media(phone-lg) {
-      font-size: $font-size__content;
+      display: none;
     }
   }
 
   &List {
-    padding: 20px 20px 20px 60px;
+    padding: 0 20px 0 60px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    margin-bottom: 5vh;
+    font-size: 20px;
+
+    @media(max-height: 719px) {
+      font-size: 16px;
+    }
 
     @include media(phone-lg) {
       display: none;
     }
 
     &Element {
-      height: 40px;
-      margin: 7px 0;
+      height: auto;
       position: relative;
-      padding: 0 0 0 30px;
+      padding: 1.5vh 0 0 30px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      transition: transform 0.7s;
+      transition: transform 0.3s ease-in-out;
 
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.05);
       }
 
       &:before {
@@ -84,6 +92,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
+      padding: 5px 0;
 
       @include media(tablet-lg) {
         width: 500px;
@@ -97,16 +107,30 @@
     }
 
     &Image {
-      margin: 5px;
+      margin: 5px 10px;
       transition: transform 0.5s;
+      height: 30px;
+
+
+      @media(max-height: 719px) {
+        height: 20px;
+        margin: 3px 5px;
+      }
+
+      @include media(tablet-lg) {
+        height: 25px;
+        margin: 3px 5px;
+      }
 
       &:hover {
-        transform: scale(1.5);
+        transform: scale(1.2);
         z-index: 10;
       }
     }
 
     @include media(phone-lg) {
+      height: auto;
+      transform: none;
       margin: 3px;
     }
   }
